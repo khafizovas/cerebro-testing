@@ -1,5 +1,15 @@
+import { Provider } from 'react-redux';
+
+import { store } from './store';
+
+import PostsList from './components/PostsList';
+
 function App() {
-	return <div>Initial component</div>;
+	return (
+		<Provider store={store}>
+			<PostsList></PostsList>
+		</Provider>
+	);
 }
 
 export default App;
