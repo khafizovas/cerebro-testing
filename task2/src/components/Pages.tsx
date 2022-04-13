@@ -8,7 +8,7 @@ interface pagesProps {
 
 const Pages: React.FC<pagesProps> = (props) => {
 	return (
-		<ButtonGroup>
+		<ButtonGroup style={{ flexWrap: 'wrap', margin: '1%' }}>
 			{props.pages.map((p) => (
 				<Button
 					key={p}

@@ -1,6 +1,6 @@
 # Небольшое приложение отображения списка постов.
 
-Для получения данных использован ресурс [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/) (точки /posts и /users).
+Для получения данных использован ресурс [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/) (точки /posts и /users). Отображаются первые 100 постов.
 
 Каждый пост включает в себя имя пользователя, который создал пост, заголовок и контент поста.
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from 'react';
 
 import { useTypedSelector } from '../hooks/useTypedSelector';
@@ -6,7 +7,7 @@ import { useActions } from '../hooks/useActions';
 import Post from './Post';
 import Pages from './Pages';
 
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 
 const PostsList: React.FC = () => {
 	const { page, limit, posts, error, loading } = useTypedSelector(
@@ -21,28 +22,30 @@ const PostsList: React.FC = () => {
 	}, [page]);
 
 	if (error) {
-		return <div>{error}</div>;
+		return (
+			<Grid item width='100%'>
+				{error}
+			</Grid>
+		);
 	}
 
 	if (loading) {
-		return <div>Загрузка списка постов...</div>;
+		return (
+			<Grid item width='100%'>
+				Загрузка списка постов...
+			</Grid>
+		);
 	}
 
 	return (
-		<Grid
-			container
-			direction='column'
-			alignItems='center'
-			width='80%'
-			margin='auto'>
-			<Typography variant='h3'>Список постов</Typography>
+		<React.Fragment>
 			{posts.map((post) => (
-				<Grid item width='100%'>
-					<Post {...post} key={post.id} />
+				<Grid item width='100%' key={post.id}>
+					<Post {...post} />
 				</Grid>
 			))}
 			<Pages pages={pages} selectedPage={page} setPostsPage={setPostsPage} />
-		</Grid>
+		</React.Fragment>
 	);
 };
 
