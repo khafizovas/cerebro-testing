@@ -1,5 +1,4 @@
 interface postProps {
-	id: number;
 	userId: number;
 	title: string;
 	body: string;
@@ -7,7 +6,7 @@ interface postProps {
 
 const Post: React.FC<postProps> = (props) => {
 	return (
-		<li key={props.id}>
+		<li>
 			<strong>User</strong>: {props.userId};<br />
 			<strong>Title</strong>:{props.title};<br />
 			<strong>Body</strong>: {props.body}
