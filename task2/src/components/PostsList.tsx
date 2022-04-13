@@ -1,8 +1,12 @@
 import { useEffect } from 'react';
 
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import Post from './Post';
 import { useActions } from '../hooks/useActions';
+
+import Post from './Post';
+import Pages from './Pages';
+
+import { Grid, Typography } from '@mui/material';
 
 const PostsList: React.FC = () => {
 	const { page, limit, posts, error, loading } = useTypedSelector(
@@ -25,28 +29,20 @@ const PostsList: React.FC = () => {
 	}
 
 	return (
-		<>
-			<ul>
-				{posts.map((post) => (
+		<Grid
+			container
+			direction='column'
+			alignItems='center'
+			width='80%'
+			margin='auto'>
+			<Typography variant='h3'>Список постов</Typography>
+			{posts.map((post) => (
+				<Grid item width='100%'>
 					<Post {...post} key={post.id} />
-				))}
-			</ul>
-
-			<div style={{ display: 'flex' }}>
-				{pages.map((p) => (
-					<button
-						key={p}
-						onClick={() => setPostsPage(p + 1)}
-						style={{
-							padding: '0.5%',
-							border: `solid ${p + 1 === page ? '2px green' : '1px grey'}`,
-							cursor: 'pointer',
-						}}>
-						{p + 1}
-					</button>
-				))}
-			</div>
-		</>
+				</Grid>
+			))}
+			<Pages pages={pages} selectedPage={page} setPostsPage={setPostsPage} />
+		</Grid>
 	);
 };
 
