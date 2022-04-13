@@ -1,3 +1,6 @@
+import { Stack, Card, CardContent, Typography } from '@mui/material';
+import Person from '@mui/icons-material/Person';
+
 interface postProps {
 	userId: number;
 	title: string;
@@ -6,11 +9,18 @@ interface postProps {
 
 const Post: React.FC<postProps> = (props) => {
 	return (
-		<li>
-			<strong>User</strong>: {props.userId};<br />
-			<strong>Title</strong>: {props.title};<br />
-			<strong>Body</strong>: {props.body}
-		</li>
+		<Card>
+			<CardContent>
+				<Typography variant='h5'>{props.title}</Typography>
+				<Typography variant='body2'>{props.body}</Typography>
+				<Stack direction='row' alignItems='center' gap={1}>
+					<Person></Person>
+					<Typography sx={{ fontSize: 14 }} color='text.secondary'>
+						{props.userId}
+					</Typography>
+				</Stack>
+			</CardContent>
+		</Card>
 	);
 };
 
