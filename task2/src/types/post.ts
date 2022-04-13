@@ -2,13 +2,15 @@ export interface PostState {
 	posts: any[];
 	loading: boolean;
 	error: null | string;
+	page: number;
+	limit: number;
 }
 
 export enum PostActionTypes {
-	FETCH_POSTS = 'FETCH_TODOS',
-	FETCH_POSTS_SUCCESS = 'FETCH_TODOS_SUCCESS',
-	FETCH_POSTS_ERROR = 'FETCH_TODOS_ERROR',
-	SET_POST_PAGE = 'SET_TODO_PAGE',
+	FETCH_POSTS = 'FETCH_POSTS',
+	FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS',
+	FETCH_POSTS_ERROR = 'FETCH_POSTS_ERROR',
+	SET_POSTS_PAGE = 'SET_POSTS_PAGE',
 }
 
 interface FetchPostAction {
@@ -24,7 +26,7 @@ interface FetchPostErrorAction {
 	payload: string;
 }
 interface SetPostPage {
-	type: PostActionTypes.SET_POST_PAGE;
+	type: PostActionTypes.SET_POSTS_PAGE;
 	payload: number;
 }
 
