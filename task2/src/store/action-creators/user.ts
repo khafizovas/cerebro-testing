@@ -11,12 +11,13 @@ export const fetchUser = (userId: number) => {
 				`https://jsonplaceholder.typicode.com/users/${userId}`
 			);
 
+			// Timeout to show preloader
 			setTimeout(() => {
 				dispatch({
 					type: UserActionTypes.FETCH_USER_SUCCESS,
 					payload: response.data.username,
 				});
-			}, 10);
+			}, 500);
 		} catch (e) {
 			dispatch({
 				type: UserActionTypes.FETCH_USER_ERROR,

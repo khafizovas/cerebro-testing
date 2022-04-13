@@ -3,7 +3,13 @@ import { useEffect } from 'react';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useActions } from '../hooks/useActions';
 
-import { Stack, Card, CardContent, Typography } from '@mui/material';
+import {
+	Stack,
+	Card,
+	CardContent,
+	Typography,
+	LinearProgress,
+} from '@mui/material';
 import Person from '@mui/icons-material/Person';
 
 interface postProps {
@@ -25,7 +31,7 @@ const Post: React.FC<postProps> = (props) => {
 	}
 
 	if (loading) {
-		return <Card>Загрузка поста...</Card>;
+		return <LinearProgress color='inherit' style={{ margin: '1%' }} />;
 	}
 
 	return (

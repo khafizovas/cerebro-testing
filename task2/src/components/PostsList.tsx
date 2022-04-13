@@ -7,7 +7,7 @@ import { useActions } from '../hooks/useActions';
 import Post from './Post';
 import Pages from './Pages';
 
-import { Grid } from '@mui/material';
+import { Grid, Skeleton } from '@mui/material';
 
 const PostsList: React.FC = () => {
 	const { page, limit, posts, error, loading } = useTypedSelector(
@@ -32,7 +32,15 @@ const PostsList: React.FC = () => {
 	if (loading) {
 		return (
 			<Grid item width='100%'>
-				Загрузка списка постов...
+				{[...Array(10).keys()].map((i) => (
+					<Skeleton
+						key={i}
+						variant='rectangular'
+						animation='wave'
+						height='70px'
+						style={{ margin: '1%' }}
+					/>
+				))}
 			</Grid>
 		);
 	}

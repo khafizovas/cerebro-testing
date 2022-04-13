@@ -12,12 +12,13 @@ export const fetchPosts = (page = 1, limit = 10) => {
 				{ params: { _page: page, _limit: limit } }
 			);
 
+			// Timeout to show preloader
 			setTimeout(() => {
 				dispatch({
 					type: PostActionTypes.FETCH_POSTS_SUCCESS,
 					payload: response.data,
 				});
-			}, 10);
+			}, 500);
 		} catch (e) {
 			dispatch({
 				type: PostActionTypes.FETCH_POSTS_ERROR,
