@@ -17,7 +17,7 @@ export const fetchPosts = (page = 1, limit = 10) => {
 					type: PostActionTypes.FETCH_POSTS_SUCCESS,
 					payload: response.data,
 				});
-			}, 500);
+			}, 10);
 		} catch (e) {
 			dispatch({
 				type: PostActionTypes.FETCH_POSTS_ERROR,
