@@ -5,7 +5,7 @@ import { store } from './store';
 import { Grid, Typography } from '@mui/material';
 
 import PostsList from './components/PostsList';
-import Cartoon from './components/Cartoon';
+import Cartoon from './components/cartoon/Cartoon';
 
 function App() {
 	return (
