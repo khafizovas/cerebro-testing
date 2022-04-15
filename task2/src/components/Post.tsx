@@ -5,6 +5,7 @@ import { useActions } from '../hooks/useActions';
 
 import {
 	Stack,
+	Box,
 	Card,
 	CardContent,
 	Typography,
@@ -31,7 +32,11 @@ const Post: React.FC<postProps> = (props) => {
 	}
 
 	if (loading) {
-		return <LinearProgress color='inherit' style={{ margin: '1%' }} />;
+		return (
+			<Box style={{ height: '70px' }}>
+				<LinearProgress color='inherit' style={{ margin: '1%' }} />
+			</Box>
+		);
 	}
 
 	return (
