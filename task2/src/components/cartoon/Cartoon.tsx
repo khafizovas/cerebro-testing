@@ -1,3 +1,5 @@
+import './Animations.css';
+import './Pseudoclasses.css';
 import './Cartoon.css';
 
 import Sky from './Sky';

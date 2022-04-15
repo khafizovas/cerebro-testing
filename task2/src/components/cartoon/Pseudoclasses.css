@@ -1,0 +1,64 @@
+.cloud:before,
+.cloud:after {
+	position: absolute;
+	top: -1.5vw;
+	left: 1vw;
+
+	width: 10vw;
+	height: 8vw;
+
+	content: '';
+
+	border-radius: 100%;
+	background: #ffffff;
+}
+
+.cloud:after {
+	top: -5.5vw;
+	right: 1.5vw;
+	left: auto;
+
+	width: 12vw;
+	height: 12vw;
+}
+
+.sea::after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	height: 30%;
+
+	content: '';
+
+	background: #8b6448;
+}
+
+.ship::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	width: 15vw;
+	height: 3vw;
+
+	content: '';
+
+	border-radius: 0 0 0 20px;
+	background: #e25c45;
+}
+
+.ship::before {
+	position: absolute;
+	top: 0;
+	left: 2vw;
+
+	width: 10vw;
+	height: 15vw;
+
+	content: '';
+
+	border-radius: 20px 0 0 0;
+	background: #ffffff;
+}
